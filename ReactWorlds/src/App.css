@@ -1,100 +1,75 @@
-/* General App styling */
-.App {
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  background-color: #b79ac0;
-  padding: 10px;
-  overflow-x: auto; /* Añadido para permitir desplazamiento horizontal en dispositivos pequeños */
-  overflow-y: auto;
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Title styling */
-h1 {
-  color: #ffffff;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-/* Table container styling for responsiveness */
 .table-container {
-  max-width: 100%;
-  overflow-x: auto; /* Habilita el scroll horizontal */
-  margin: 0 auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Para resaltar la tabla */
-  background-color: #fff;
+  max-width: 1100px;
+  max-height: 73vh;
+  width: 100%;
+  overflow-x: auto;
+  border: 2px solid #ccc ;
+  border-radius: 10px;
 }
 
-/* Table styling */
 table {
-  width: 100%; /* Ahora ocupa siempre el 100% del contenedor */
-  border-collapse: separate; /* Enable cell borders */
-  border-spacing: 0; /* Remove gaps between cells */
-  font-size: 0.9rem;
-  min-width: 600px; /* Asegura que la tabla no sea demasiado pequeña */
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* Table borders */
-th, td {
-  border: 1px solid #ddd; /* Add lines between cells */
+th{
+  background-color: #4f304f;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #cecece;
+  border-right: 2px solid #cecece;
 }
 
-/* Header styling */
+td{
+  padding-right: 7px;
+  padding-left: 7px;
+  border-bottom: 2px solid #c396d0;
+  border-right: 2px solid #c396d0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+tr{
+  transition: background-color 0.3s, color 0.7s;
+}
+
+
+tr:nth-child(even) {
+  background-color: #875b92;
+  color: #180824;
+}
+
+tr:nth-child(odd) {
+  background-color: #6c2088;
+}
+
+tr:nth-child(even):hover {
+  background-color: #663d70;
+  color: #ffffff;
+}
+
+tr:nth-child(odd):hover {
+  background-color: #4a105f;
+  color: #e1dcdc;
+}
+
+
 thead th {
-  background-color: #3f51b5;
-  color: #fff;
-  text-align: left;
-  padding: 8px;
-  font-size: 0.85rem;
-  border-bottom: 2px solid #2c387e;
-}
-
-/* Table rows styling */
-tbody tr {
-  transition: background-color 0.3s ease;
-}
-
-
-tbody tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Cell styling */
-td {
-  padding: 6px;
-  text-align: left;
-  color: #555;
-  transition: background-color 0.3s ease, color 0.2s ease;
-}
-
-tr:nth-child(odd) td {
-  background-color: #8f8f8f;
-  color: #141313;
-}
-
-tr:nth-child(odd) td:hover {
-  background-color:  #141313;
-  color: #8f8f8f;
-}
-
-td:hover {
-  background-color: #eaeaea; /* Highlight cell on hover */
-  color: #333; /* Darker text on hover */
-}
-
-/* First column special styling */
-td:first-child {
-  font-weight: bold;
-  color: #222;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  table {
-    font-size: 0.8rem;
-  }
-
-  td,
-  th {
-    padding: 4px;
-  }
+  position: sticky;
+  top: 0;
+  z-index: 2; /* para que quede encima de las celdas */
+  background-color: #4f304f; /* vuelve a poner el color, si no se pierde */
 }
